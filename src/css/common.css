@@ -16,3 +16,28 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.color-switch-btn {
+  margin: 20px;
+  height: 3rem;
+  width: 9rem;
+  background-color: #ffffff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 250ms linear;
+  transition: font-weight 100ms linear;
+}
+.color-switch-btn:hover {
+  background-color: aliceblue; 
+  font-weight: 900;
+  border: 2px solid #000000;
+}
+.color-switch-btn:disabled {
+    font-weight: 700;
+    border: 2px solid red;
+    color: red;
+}
