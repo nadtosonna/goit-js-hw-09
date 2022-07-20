@@ -32,7 +32,7 @@ img {
   transition: font-weight 100ms linear;
 }
 .color-switch-btn:hover {
-  background-color: aliceblue; 
+  background-color: greenyellow; 
   font-weight: 900;
   border: 2px solid #000000;
 }
@@ -40,4 +40,5 @@ img {
     font-weight: 700;
     border: 2px solid red;
     color: red;
+    background-color: #ffffff;
 }
