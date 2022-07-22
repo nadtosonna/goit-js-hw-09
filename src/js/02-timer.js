@@ -34,7 +34,8 @@ flatpickr("#datetime-picker", {
 refs.startBtn.addEventListener('click', onClickCountdownStart);
 
 function onClickCountdownStart() {
-    refs.startBtn.setAttribute('disabled', true);
+  refs.startBtn.setAttribute('disabled', true);
+  refs.input.setAttribute('disabled', true);
     const endTime = Date.parse(refs.input.value);
     timerId = setInterval(() => {
       const currentTime = Date.now();
