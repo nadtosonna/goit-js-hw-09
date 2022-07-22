@@ -41,4 +41,25 @@ img {
     border: 2px solid red;
     color: red;
     background-color: #ffffff;
+    cursor: not-allowed;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 36px;
+}
+
+.field:not(:last-child) {
+margin-right: 10px;
+}
+.field:not(:last-child)::after {
+    content: ':';
+}
+
+.final {
+  background-image: url(../images/final.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }

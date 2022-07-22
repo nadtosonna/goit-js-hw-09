@@ -24,11 +24,11 @@ function getRandomHexColor() {
 }
 function offBtn() {
     if (!isActive) {
-        refs.startBtn.setAttribute('disabled', 'disabled');
+        refs.startBtn.setAttribute('disabled', true);
         refs.stopBtn.removeAttribute('disabled');
     } 
 }
 function onBtn() {
     refs.startBtn.removeAttribute('disabled');
-    refs.stopBtn.setAttribute('disabled', 'disabled');
+    refs.stopBtn.setAttribute('disabled', true);
 }
