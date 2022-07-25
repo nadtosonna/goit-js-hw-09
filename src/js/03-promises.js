@@ -8,6 +8,17 @@ const refs = {
 
 refs.form.addEventListener('submit', onFormSubmit)
 
+function createPromise(position, delay) {
+  return new Promise((resolve, reject) => {
+  const shouldResolve = Math.random() > 0.3;
+  if (shouldResolve) {
+    setTimeout(() => resolve({ position, delay }), delay);
+  } else {
+    setTimeout(() => reject({ position, delay }), delay);
+  }
+  })
+}
+
 function onFormSubmit(event) {
   event.preventDefault();
   let promises = [];
@@ -15,14 +26,5 @@ function onFormSubmit(event) {
     createPromise(i + 1, Number(refs.step.value)*(i)+Number(refs.delay.value))
     .then(({position, delay}) => Notify.success(`Fulfilled promise ${position} in ${delay}ms`))
     .catch(({position, delay}) => Notify.failure(`Rejected promise ${position} in ${delay}ms`))
-  }
-}
-
-function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    setTimeout(() => resolve({ position, delay }), delay);
-  } else {
-    setTimeout(() => reject({ position, delay }), delay);
   }
 }
