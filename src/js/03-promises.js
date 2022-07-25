@@ -7,7 +7,7 @@ const refs = {
   amount: document.querySelector('input[name="amount"]'),
 }
 
-refs.form.addEventListener('submit', onFormSubmit)
+refs.form.addEventListener('submit', onFormSubmit);
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
