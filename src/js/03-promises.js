@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const refs = {
   form: document.querySelector('.form'),
   delay: document.querySelector('input[name="delay"]'),
@@ -11,10 +11,10 @@ refs.form.addEventListener('submit', onFormSubmit)
 function onFormSubmit(event) {
   event.preventDefault();
   let promises = [];
-  for (let i = 0; i < +amount.value; i+= 1) {
-    createPromise(i + 1, +step.value *(i) + +delay.value)
-    .then(({position, delay}) => Notiflix.Notify.success(`Fulfilled promise ${position} in ${delay}ms`))
-    .catch(({position, delay}) => Notiflix.Notify.failure(`Rejected promise ${position} in ${delay}ms`))
+  for (let i = 0; i < +refs.amount.value; i += 1) {
+    createPromise(i + 1, Number(refs.step.value)*(i)+Number(refs.delay.value))
+    .then(({position, delay}) => Notify.success(`Fulfilled promise ${position} in ${delay}ms`))
+    .catch(({position, delay}) => Notify.failure(`Rejected promise ${position} in ${delay}ms`))
   }
 }
 
